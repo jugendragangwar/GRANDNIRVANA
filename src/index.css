@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Premium Luxury Color Palette */
+    --background: 220 20% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    /* Deep Navy Primary */
+    --primary: 220 45% 15%;
+    --primary-foreground: 45 40% 95%;
+
+    /* Champagne Gold Secondary */
+    --secondary: 45 55% 70%;
+    --secondary-foreground: 220 45% 15%;
+
+    /* Elegant Cream */
+    --muted: 40 30% 94%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Gold Accent */
+    --accent: 43 74% 49%;
+    --accent-foreground: 220 45% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 43 74% 49%;
+
+    --radius: 0.25rem;
+
+    /* Custom Luxury Colors */
+    --gold: 43 74% 49%;
+    --gold-light: 45 55% 70%;
+    --gold-dark: 43 74% 35%;
+    --navy: 220 45% 15%;
+    --navy-light: 220 35% 25%;
+    --cream: 45 40% 95%;
+    --cream-dark: 40 30% 90%;
+
+    /* Premium Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(43 74% 49%), hsl(45 55% 70%));
+    --gradient-navy: linear-gradient(180deg, hsl(220 45% 15%), hsl(220 35% 25%));
+    --gradient-hero: linear-gradient(180deg, hsla(220, 45%, 10%, 0.7) 0%, hsla(220, 45%, 15%, 0.5) 50%, hsla(220, 45%, 10%, 0.8) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 4px 20px -4px hsla(220, 45%, 15%, 0.15);
+    --shadow-card: 0 8px 30px -8px hsla(220, 45%, 15%, 0.12);
+    --shadow-gold: 0 4px 20px -4px hsla(43, 74%, 49%, 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 45% 8%;
+    --foreground: 45 40% 95%;
+
+    --card: 220 40% 12%;
+    --card-foreground: 45 40% 95%;
+
+    --popover: 220 40% 12%;
+    --popover-foreground: 45 40% 95%;
+
+    --primary: 45 40% 95%;
+    --primary-foreground: 220 45% 15%;
+
+    --secondary: 43 74% 49%;
+    --secondary-foreground: 220 45% 10%;
+
+    --muted: 220 35% 18%;
+    --muted-foreground: 45 20% 70%;
+
+    --accent: 43 74% 49%;
+    --accent-foreground: 220 45% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 43 74% 49%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .luxury-heading {
+    @apply font-serif font-light tracking-wide;
+  }
+
+  .luxury-subheading {
+    @apply font-sans uppercase tracking-[0.3em] text-sm font-medium text-accent;
+  }
+
+  .gold-text {
+    background: linear-gradient(135deg, hsl(43 74% 49%), hsl(45 65% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gold-border {
+    @apply border border-accent/30;
+  }
+
+  .luxury-card {
+    @apply bg-card rounded-sm shadow-[var(--shadow-card)] overflow-hidden transition-all duration-500;
+  }
+
+  .luxury-card:hover {
+    @apply shadow-[var(--shadow-gold)];
+    transform: translateY(-4px);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-4 md:px-8;
+  }
+
+  .container-luxury {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Elegant Divider */
+  .elegant-divider {
+    @apply flex items-center justify-center gap-4 my-8;
+  }
+
+  .elegant-divider::before,
+  .elegant-divider::after {
+    content: '';
+    @apply h-px w-16 bg-accent/40;
+  }
+
+  /* Text overlay for images */
+  .image-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent;
+  }
+
+  /* Parallax effect */
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
